@@ -1,0 +1,90 @@
+.card {
+  &__user {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #2196f3;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  &__userInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  &__userImage {
+  }
+  &__imageAvatar {
+    max-width: 90px;
+    max-height: 90px;
+    border-radius: 50%;
+  }
+  &__userData {
+  }
+  &__userName {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 31px;
+    span {
+      display: block;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 23px;
+      color: #2196f3;
+    }
+  }
+  &__userAbout {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  &__userStats {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    margin-bottom: 22px;
+    list-style: none;
+  }
+  &__userStatsItem {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #a0b0b9;
+    span {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      color: #4a4a4a;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+  }
+  &__userLocation {
+    list-style: none;
+  }
+  &__userLocationItem {
+    padding-left: 26px;
+    margin-bottom: 17px;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: -0.02em;
+    background-image: url("../../assets/img/location.svg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    &:last-child {
+      background-image: url("../../assets/img/link.svg");
+    }
+    a {
+      text-decoration: none;
+      color: var(--main-color);
+      transition: color 0.3s ease-in-out;
+    }
+    a:hover {
+      color: #2196f3;
+    }
+  }
+}
