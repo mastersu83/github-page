@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Filters.module.scss";
 import FilterItem from "../FilterItem/FilterItem";
 
@@ -36,6 +36,13 @@ const filters = [
 ];
 
 const Filters = () => {
+  const [check, setCheck] = useState<boolean>();
+  const [checkName, setCheckName] = useState<number>(0);
+
+  const onClick = (index: number) => {
+    setCheck(!check);
+    setCheckName(index);
+  };
   return (
     <div className={classes.filters}>
       {filters.map((f, index) => (
@@ -45,7 +52,13 @@ const Filters = () => {
           </div>
           <ul className={classes.filters__items}>
             {f.items.map((fil, index) => (
-              <FilterItem key={index} filter={fil} />
+              <FilterItem
+                key={index}
+                filter={fil}
+                index={index}
+                checkName={checkName}
+                onClickChecked={onClick}
+              />
             ))}
           </ul>
         </div>

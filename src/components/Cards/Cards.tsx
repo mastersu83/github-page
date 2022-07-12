@@ -35,7 +35,7 @@ const Cards = () => {
       });
       await axios
         .get(
-          `https://api.github.com/search/repositories?q=${userLogin}&per_page=10`
+          `https://api.github.com/search/repositories?q=${userLogin}+language:javascript&sort=name&per_page=10&order=asc`
         )
         .then((res) => setUser(res.data));
       setState({

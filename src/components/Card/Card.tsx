@@ -2,12 +2,25 @@ import React, { FC } from "react";
 import classes from "./Card.module.scss";
 import { ReposType } from "../../types/DataTypes";
 
-const Card: FC<ReposType> = ({ owner, language, forks, forks_count, fork }) => {
+const Card: FC<ReposType> = ({
+  owner,
+  language,
+  forks,
+  forks_count,
+  fork,
+  name,
+  html_url,
+}) => {
   return (
     <div className={classes.card__user}>
       <div className={classes.card__userInfo}>
         <div className={classes.card__userData}>
-          <h1 className={classes.card__userName}>{owner.login}</h1>
+          <h1 className={classes.card__userName}>
+            Repository: <a href={html_url}>{name}</a>
+            <span>
+              User: <a href={`${owner.html_url}`}>{owner.login}</a>
+            </span>
+          </h1>
         </div>
         <div className={classes.card__userImage}>
           <img
@@ -19,7 +32,7 @@ const Card: FC<ReposType> = ({ owner, language, forks, forks_count, fork }) => {
       </div>
       <ul className={classes.card__userStats}>
         <li className={classes.card__userStatsItem}>
-          Язык
+          Language
           <br />
           <span>{language}</span>
         </li>
